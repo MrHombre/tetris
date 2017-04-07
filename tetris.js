@@ -15,6 +15,13 @@ const matrix = [
       [1, 1, 1],
       [0, 1, 0],
 ];
+
+//General draw function
+function draw() {
+  //Calling player
+  drawMatrix(player.matrix, player.pos);
+}
+
 //Wrapping maxtix in a function
 function drawMatrix(matrix, offset) {
   // Drawing the first piece
@@ -39,5 +46,5 @@ const player = {
   pos: {x:5, y:5},
   matrix: matrix,
 }
-//Calling player
-drawMatrix(player.matrix, player.pos);
+
+darw();
