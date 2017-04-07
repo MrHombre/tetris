@@ -15,17 +15,21 @@ const matrix = [
       [1, 1, 1],
       [0, 1, 0],
 ];
-
-// Drawing the first piece
-matrix.forEach((row, y) => {
-  // Iterating over the row
-  row.forEach((value, x) => {
-    // Checking to make sure the value isn't 0
-    if (value !== 0) {
-      // if the value is not 0 then we draw
-      context.fillStyle = 'red';
-      // x=left, y=right, 1=width, 1=height
-      context.fillRect(x, y, 1, 1);
-    }
+//Wrapping maxtix in a function
+function drawMatrix(matrix) {
+  // Drawing the first piece
+  matrix.forEach((row, y) => {
+    // Iterating over the row
+    row.forEach((value, x) => {
+      // Checking to make sure the value isn't 0
+      if (value !== 0) {
+        // if the value is not 0 then we draw
+        context.fillStyle = 'red';
+        // x=left, y=right, 1=width, 1=height
+        context.fillRect(x, y, 1, 1);
+      }
+    });
   });
-});
+}
+
+drawMatrix(matrix);
