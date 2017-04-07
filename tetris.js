@@ -47,4 +47,4 @@ const player = {
   matrix: matrix,
 }
 
-darw();
+draw();
