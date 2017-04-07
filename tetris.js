@@ -35,7 +35,7 @@ function drawMatrix(matrix, offset) {
 }
 
 //Creating player structure
-const plater = {
+const player = {
   pos: {x:5, y:5},
   matrix: matrix,
 }
