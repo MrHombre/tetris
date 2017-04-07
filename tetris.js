@@ -16,7 +16,7 @@ const matrix = [
       [0, 1, 0],
 ];
 //Wrapping maxtix in a function
-function drawMatrix(matrix) {
+function drawMatrix(matrix, offset) {
   // Drawing the first piece
   matrix.forEach((row, y) => {
     // Iterating over the row
@@ -26,10 +26,12 @@ function drawMatrix(matrix) {
         // if the value is not 0 then we draw
         context.fillStyle = 'red';
         // x=left, y=right, 1=width, 1=height
-        context.fillRect(x, y, 1, 1);
+        context.fillRect(x + offset.x, // offset should let us move
+                         y + offset.y, // blocks later
+                         1, 1);
       }
     });
   });
 }
 
-drawMatrix(matrix);
+drawMatrix(matrix, {x:5, y:5});
