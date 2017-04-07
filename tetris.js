@@ -1,8 +1,11 @@
-const canvas = document.getElementById('tetris')
-const context = canvas.getContext('2d')
+const canvas = document.getElementById('tetris');
+const context = canvas.getContext('2d');
+
+// Just making it bigger to see
+context.scale(20, 20);
 
 // Filling in canvas
-context.fillStyle = '#000'
+context.fillStyle = '#000';
 context.fillRect(0, 0, canvas.width, canvas.height);
 
 /* Matrix to build the tetris blocks
