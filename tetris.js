@@ -34,4 +34,10 @@ function drawMatrix(matrix, offset) {
   });
 }
 
-drawMatrix(matrix, {x:5, y:5});
+//Creating player structure
+const plater = {
+  pos: {x:5, y:5},
+  matrix: matrix,
+}
+//Can call player instead
+drawMatrix(player.matrix, player.pos);
