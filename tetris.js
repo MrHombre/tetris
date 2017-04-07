@@ -41,10 +41,17 @@ function drawMatrix(matrix, offset) {
   });
 }
 
+/* Update Function: Continuously draws the game
+using Animation Frame */
+function update() {
+  draw();
+  requestAnimationFrame(update);
+}
+
 //Player structure
 const player = {
   pos: {x:5, y:5},
   matrix: matrix,
 }
 
-draw();
+update();
