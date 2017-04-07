@@ -17,7 +17,7 @@ function draw() {
   // Filling in canvas
   context.fillStyle = '#000';
   context.fillRect(0, 0, canvas.width, canvas.height);
-  
+
   //Calling player
   drawMatrix(player.matrix, player.pos);
 }
@@ -41,9 +41,14 @@ function drawMatrix(matrix, offset) {
   });
 }
 
+let lastTime = 0;
 /* Update Function: Continuously draws the game
 using Animation Frame */
-function update() {
+function update(time = 0) {
+  //formating time so it's easier for us
+  const deltaTime = time -lastTime;
+  lastTime = time;
+
   draw();
   requestAnimationFrame(update);
 }
