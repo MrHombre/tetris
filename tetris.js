@@ -4,10 +4,6 @@ const context = canvas.getContext('2d');
 // Just making it bigger to see
 context.scale(20, 20);
 
-// Filling in canvas
-context.fillStyle = '#000';
-context.fillRect(0, 0, canvas.width, canvas.height);
-
 /* Matrix to build the tetris blocks
    Thanks smarter people */
 const matrix = [
@@ -18,6 +14,10 @@ const matrix = [
 
 //General draw function
 function draw() {
+  // Filling in canvas
+  context.fillStyle = '#000';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  
   //Calling player
   drawMatrix(player.matrix, player.pos);
 }
