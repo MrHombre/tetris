@@ -69,4 +69,31 @@ const player = {
   matrix: matrix,
 }
 
+document.addEventListener("keydown", event => {
+  if (event.key === 'ArrowLeft') {
+    player.pos.x--;
+  } else if (event.key === 'ArrowRight') {
+    player.pos.x++;
+  } else if (event.key === 'ArrowDown') {
+    player.pos.y++;
+    //Reseting dropCounter show if we press down another drop wont happened
+    dropCounter = 0;
+  }
+});
+
+/* Keyboard code Movement
+using keycode bit easier
+left=37, right=39, down=40
+document.addEventListener('keydown', event => {
+  if (event.keycode === 37) {
+    player.pos.x--;
+  } else if (event.keycode === 39) {
+    player.pos.x++;
+  } else if (event.keycode === 39) {
+    player.pos.y++;
+    //Reseting dropCounter show if we press down another drop wont happened
+    dropCounter = 0;
+  }
+}); */
+
 update();
