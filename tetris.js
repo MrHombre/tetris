@@ -12,6 +12,14 @@ const matrix = [
       [0, 1, 0],
 ];
 
+function createMatrix(w, h) {
+  const matrix = [];
+  while (h--) {
+    matrix.push(new Array(w).fill(0));
+  }
+  return matrix;
+}
+
 //General draw function
 function draw() {
   // Filling in canvas
@@ -36,6 +44,19 @@ function drawMatrix(matrix, offset) {
         context.fillRect(x + offset.x, // offset should let us move
                          y + offset.y, // blocks later
                          1, 1);
+      }
+    });
+  });
+}
+
+// copying the vale of player into the arena
+function merge(arena, player) {
+  player.matrix.forEach((row, y) => {
+    row.forEach((value, x) => {
+      //values that are zero are ignored
+      if (value !== 0) {
+        // copy value into arena at the correct offset
+        arena[y + player.pos.y][x + player.pos.x] = value;
       }
     });
   });
@@ -68,6 +89,9 @@ function update(time = 0) {
   draw();
   requestAnimationFrame(update);
 }
+
+// Creating our arean
+const arena = createMatrix(12, 20);
 
 //Player structure
 const player = {
