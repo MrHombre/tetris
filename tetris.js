@@ -119,7 +119,7 @@ function update(time = 0) {
   requestAnimationFrame(update);
 }
 
-// Creating our arean
+// Creating our arena
 const arena = createMatrix(12, 20);
 
 //Player structure
