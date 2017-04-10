@@ -41,6 +41,12 @@ function drawMatrix(matrix, offset) {
   });
 }
 
+function playerDrop() {
+  player.pos.y++;
+  //Reseting dropCounter show if we press down another drop wont happened
+  dropCounter = 0;
+}
+
 let dropCounter = 0;
 let dropInterval = 1000; //In milliseconds. Every 1 second should drop
 
@@ -55,8 +61,7 @@ function update(time = 0) {
   dropCounter += deltaTime;
   /* If our dropCounter is greater than our dropInterval the block should move down, and then reset*/
   if (dropCounter > dropInterval) {
-    player.pos.y++;
-    dropCounter = 0;
+    playerDrop();
   }
 
   draw();
@@ -67,33 +72,15 @@ function update(time = 0) {
 const player = {
   pos: {x:5, y:5},
   matrix: matrix,
-}
+};
 
-document.addEventListener("keydown", event => {
+document.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft') {
     player.pos.x--;
   } else if (event.key === 'ArrowRight') {
     player.pos.x++;
   } else if (event.key === 'ArrowDown') {
-    player.pos.y++;
-    //Reseting dropCounter show if we press down another drop wont happened
-    dropCounter = 0;
+    playerDrop();
   }
 });
-
-/* Keyboard code Movement
-using keycode bit easier
-left=37, right=39, down=40
-document.addEventListener('keydown', event => {
-  if (event.keycode === 37) {
-    player.pos.x--;
-  } else if (event.keycode === 39) {
-    player.pos.x++;
-  } else if (event.keycode === 39) {
-    player.pos.y++;
-    //Reseting dropCounter show if we press down another drop wont happened
-    dropCounter = 0;
-  }
-}); */
-
 update();
