@@ -41,6 +41,7 @@ function draw() {
   context.fillStyle = '#000';
   context.fillRect(0, 0, canvas.width, canvas.height);
 
+  drawMatrix(arena, { x: 0, y: 0 });
   //Calling player
   drawMatrix(player.matrix, player.pos);
 }
