@@ -7,5 +7,11 @@
 **Everything**
 
 Specifically
-- add Collision detection to the right and left side of the arena,
-so the blocks wont go off screen. 
+- ~~add Collision detection to the right and left side of the arena,
+so the blocks wont go off screen.~~
+
+ - rotating blocks
+
+ - adding score maybe
+
+ - and other blocks + colors
