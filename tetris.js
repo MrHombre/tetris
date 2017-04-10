@@ -43,7 +43,8 @@ function drawMatrix(matrix, offset) {
 
 function playerDrop() {
   player.pos.y++;
-  //Reseting dropCounter show if we press down another drop wont happened
+
+  // Reseting dropCounter show if we press down another drop wont happened
   dropCounter = 0;
 }
 
@@ -55,7 +56,7 @@ let lastTime = 0;
 using Animation Frame */
 function update(time = 0) {
   //formating time so it's easier for us
-  const deltaTime = time -lastTime;
+  const deltaTime = time - lastTime;
   lastTime = time;
 
   dropCounter += deltaTime;
@@ -70,7 +71,7 @@ function update(time = 0) {
 
 //Player structure
 const player = {
-  pos: {x:5, y:5},
+  pos: { x: 5, y: 5 },
   matrix: matrix,
 };
 
