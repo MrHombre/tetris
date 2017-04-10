@@ -90,6 +90,14 @@ function playerDrop() {
   dropCounter = 0;
 }
 
+//Stopping  player from moving off screen
+function playerMove(dir) {
+  player.pos.x += dir;
+  if (collide(arena, player)) {
+    player.pos.x -= dir;
+  }
+}
+
 let dropCounter = 0;
 let dropInterval = 1000; //In milliseconds. Every 1 second should drop
 
@@ -122,9 +130,9 @@ const player = {
 
 document.addEventListener('keydown', event => {
   if (event.key === 'ArrowLeft') {
-    player.pos.x--;
+    playerMove(-1);
   } else if (event.key === 'ArrowRight') {
-    player.pos.x++;
+    playerMove(1);
   } else if (event.key === 'ArrowDown') {
     playerDrop();
   }
