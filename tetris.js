@@ -106,7 +106,7 @@ function playerRotate(dir) {
   //init offset varible
   let offset = 1;
   rotate(player.matrix, dir);
-  while (collide(arena, matrix)) {
+  while (collide(arena, player)) {
     player.pos.x += offset; //this move use to the right or checks if clear
     offset = -(offset + (offset > 0 ? 1 : -1));
 
