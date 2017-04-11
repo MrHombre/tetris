@@ -100,7 +100,23 @@ function playerMove(dir) {
 
 // Player rotate
 function playerRotate(dir) {
+  //reset offset
+  const pos = player.pos.x;
+
+  //init offset varible
+  let offset = 1;
   rotate(player.matrix, dir);
+  while (collide(arena, matrix)) {
+    player.pos.x += offset; //this move use to the right or checks if clear
+    offset = -(offset + (offset > 0 ? 1 : -1));
+
+    // Bail incase it didnt work
+    if (offset > player.matrix[0].length) {
+      rotate(player.matrix, -dir);
+      player.pos.x = pos;
+      return;
+    }
+  }
 }
 
 // Rotating blocks
