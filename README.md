@@ -4,14 +4,25 @@
 
 
 ## Todo
-**Everything**
+### **Everything**
 
 Specifically
 - ~~add Collision detection to the right and left side of the arena,
 so the blocks wont go off screen.~~
 
- - rotating blocks, make sure block can't rotate off screen
+ - ~~rotating blocks, make sure block can't rotate off screen~~
 
  - adding score maybe
 
  - and other blocks + colors
+
+ - read more to add multiplayer(hopefully)
+
+ - maybe sound cues
+
+ - Combos
+
+  &
+
+ - ULLLLTRAAAAAAAA COMBOOOOOOOO!
+ [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/EC8Jdlj4VJk/0.jpg)](https://www.youtube.com/watch?v=EC8Jdlj4VJk)
