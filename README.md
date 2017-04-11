@@ -10,7 +10,7 @@ Specifically
 - ~~add Collision detection to the right and left side of the arena,
 so the blocks wont go off screen.~~
 
- - rotating blocks
+ - rotating blocks, make sure block can't rotate off screen
 
  - adding score maybe
 
