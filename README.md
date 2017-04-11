@@ -12,7 +12,7 @@ so the blocks wont go off screen.~~
 
  - ~~rotating blocks, make sure block can't rotate off screen~~
 
- - adding score maybe
+ - add score maybe
 
  - and other blocks + colors
 
@@ -25,5 +25,5 @@ so the blocks wont go off screen.~~
   &
 
  - ULLLLTRAAAAAAAA COMBOOOOOOOO!
- 
+
  [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/EC8Jdlj4VJk/0.jpg)](https://www.youtube.com/watch?v=EC8Jdlj4VJk)
