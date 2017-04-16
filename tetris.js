@@ -6,6 +6,7 @@ context.scale(20, 20);
 
 // Adding the tetris to tetris
 function arenaSweep() {
+  let rowCount = 1;
   outer: for (let y = arena.length - 1; y > 0; --y) {
     for (let x = 0; x < arena.length; ++x) {
       if (arena[y][x] === 0) {
@@ -16,6 +17,9 @@ function arenaSweep() {
     const row = arena.splice(y, 1)[0].fill(0);
     arena.unshift(row);
     ++y;
+
+    player.score += rowCount * 10;
+    rowCount *= 2;
   }
 }
 
@@ -140,6 +144,7 @@ function playerDrop() {
     merge(arena, player);
     playerReset();
     arenaSweep();
+    updateScore();
   }
 
   // Reseting dropCounter show if we press down another drop wont happened
@@ -164,6 +169,8 @@ function playerReset() {
   // Ending the game when collide at the top
   if (collide(arena,player)) {
       arena.forEach(row => row.fill(0));
+      player.score = 0;
+      updateScore();
   }
 }
 
@@ -273,4 +280,5 @@ document.addEventListener('keydown', event => {
 });
 
 playerReset();
+updateScore();
 update();
