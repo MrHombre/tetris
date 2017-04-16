@@ -6,11 +6,7 @@ context.scale(20, 20);
 
 /* Matrix to build the tetris blocks
    Thanks smarter people */
-const matrix = [
-      [0, 0, 0],
-      [1, 1, 1],
-      [0, 1, 0],
-];
+
 
 // Collision detection
 function collide(arena, player) {
@@ -33,6 +29,17 @@ function createMatrix(w, h) {
     matrix.push(new Array(w).fill(0));
   }
   return matrix;
+}
+
+//Creating More Pieces
+function createPiece(type) {
+  if (type === 'T') {
+    return [
+          [0, 0, 0],
+          [1, 1, 1],
+          [0, 1, 0],
+      ];
+  }
 }
 
 //General draw function
@@ -167,7 +174,7 @@ const arena = createMatrix(12, 20);
 //Player structure
 const player = {
   pos: { x: 5, y: 5 },
-  matrix: matrix,
+  matrix: createPiece('T'),
 };
 
 // Using Keycode instead of key
