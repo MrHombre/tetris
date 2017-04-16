@@ -41,38 +41,38 @@ function createPiece(type) {
       ];
   } else if (type === 'O') {
     return [
-          [1, 1],
-          [1, 1],
+          [2, 2],
+          [2, 2],
       ];
   } else if (type === 'L') {
     return [
-          [0, 1, 0],
-          [0, 1, 0],
-          [0, 1, 1],
+          [0, 3, 0],
+          [0, 3, 0],
+          [0, 3, 3],
       ];
   } else if (type === 'J') {
     return [
-          [0, 1, 0],
-          [0, 1, 0],
-          [1, 1, 0],
+          [0, 4, 0],
+          [0, 4, 0],
+          [4, 4, 0],
       ];
   } else if (type === 'I') {
     return [
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
-          [0, 1, 0, 0],
+          [0, 5, 0, 0],
+          [0, 5, 0, 0],
+          [0, 5, 0, 0],
+          [0, 5, 0, 0],
       ];
   } else if (type === 'S') {
       return [
-          [0, 1, 1],
-          [1, 1, 0],
+          [0, 6, 6],
+          [6, 6, 0],
           [0, 0, 0],
       ];
   } else if (type === 'Z') {
         return [
-            [1, 1, 0],
-            [0, 1, 1],
+            [7, 7, 0],
+            [0, 7, 7],
             [0, 0, 0],
       ];
   }
@@ -97,8 +97,8 @@ function drawMatrix(matrix, offset) {
     row.forEach((value, x) => {
       // Checking to make sure the value isn't 0
       if (value !== 0) {
-        // if the value is not 0 then we draw
-        context.fillStyle = 'red';
+        // adding color
+        context.fillStyle = colors[value];
         // x=left, y=right, 1=width, 1=height
         context.fillRect(x + offset.x, // offset should let us move
                          y + offset.y, // blocks later
@@ -216,6 +216,18 @@ function update(time = 0) {
   draw();
   requestAnimationFrame(update);
 }
+
+// Colors for our Pieces
+const colors = [
+  null,
+  'red',
+  'blue',
+  'violet',
+  'green',
+  'purple',
+  'orange',
+  'pink',
+]
 
 // Creating our arena
 const arena = createMatrix(12, 20);
