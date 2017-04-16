@@ -220,13 +220,13 @@ function update(time = 0) {
 // Colors for our Pieces
 const colors = [
   null,
-  'red',
-  'blue',
-  'violet',
-  'green',
-  'purple',
-  'orange',
-  'pink',
+  '#d61c1c',
+  '#3854B2',
+  '#FFD750',
+  '#368900',
+  '#730073',
+  '#FFA500',
+  '#FF8FC7',
 ]
 
 // Creating our arena
