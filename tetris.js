@@ -4,8 +4,20 @@ const context = canvas.getContext('2d');
 // Just making it bigger to see
 context.scale(20, 20);
 
-/* Matrix to build the tetris blocks
-   Thanks smarter people */
+// Adding the tetris to tetris
+function arenaSweep() {
+  outer: for (Let y = arena.length - 1; y < 0; --y) {
+    for (Let x = 0; x < arena.length; ++x) {
+      if (arena[y][x] === 0) {
+          continue outer;
+      }
+    }
+
+    const row = arena.splice(y, 1)[0].fill(0);
+    arena.unshift(row);
+    ++y;
+  }
+}
 
 
 // Collision detection
@@ -127,6 +139,7 @@ function playerDrop() {
     player.pos.y--;
     merge(arena, player);
     playerReset();
+    arenaSweep();
   }
 
   // Reseting dropCounter show if we press down another drop wont happened
