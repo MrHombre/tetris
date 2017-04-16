@@ -6,7 +6,7 @@ context.scale(20, 20);
 
 // Adding the tetris to tetris
 function arenaSweep() {
-  outer: for (let y = arena.length - 1; y < 0; --y) {
+  outer: for (let y = arena.length - 1; y > 0; --y) {
     for (let x = 0; x < arena.length; ++x) {
       if (arena[y][x] === 0) {
           continue outer;
@@ -139,7 +139,6 @@ function playerDrop() {
     player.pos.y--;
     merge(arena, player);
     playerReset();
-    debugger;
     arenaSweep();
   }
 
