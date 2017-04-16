@@ -230,6 +230,11 @@ function update(time = 0) {
   requestAnimationFrame(update);
 }
 
+// Score
+function updateScore() {
+  document.getElementById('score').innerText = player.score;
+}
+
 // Colors for our Pieces
 const colors = [
   null,
@@ -247,8 +252,9 @@ const arena = createMatrix(12, 20);
 
 //Player structure
 const player = {
-  pos: { x: 5, y: 5 },
-  matrix: createPiece('T'),
+  pos: { x: 0, y: 0 },
+  matrix: null,
+  score: 0,
 };
 
 // Using Keycode instead of key
@@ -266,4 +272,5 @@ document.addEventListener('keydown', event => {
   }
 });
 
+playerReset();
 update();
