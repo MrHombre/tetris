@@ -148,6 +148,10 @@ function playerReset() {
   player.pos.y = 0;
   player.pos.x = (arena[0].length / 2 | 0) -
                  (player.matrix[0].length / 2 | 0);
+  // Ending the game when collide at the top
+  if (collide(arena,player)) {
+      arena.forEach(row => row.fill(0));
+  }
 }
 
 // Player rotate
