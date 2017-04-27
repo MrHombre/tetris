@@ -12,9 +12,11 @@ so the blocks wont go off screen.~~
 
  - ~~rotating blocks, make sure block can't rotate off screen~~
 
- - add score maybe
+ - ~~add score maybe~~
 
- - and other blocks + colors
+ - ~~and other blocks + colors~~
+
+### OK that's done lets work on this 
 
  - read more to add multiplayer(hopefully)
 
