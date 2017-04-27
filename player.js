@@ -8,6 +8,21 @@ class Player
   		this.score = 0;
 	}
 
+	drop() 
+	{
+		this.pos.y++;
+		if (collide(arena, this)) {
+		  this.pos.y--;
+		  merge(arena, this);
+		  playerReset();
+		  arenaSweep();
+		  updateScore();
+	  }
+
+	  // Reseting dropCounter show if we press down another drop wont happened
+	  dropCounter = 0;
+	}
+
 	//Stopping  player from moving off screen
 	move(dir) 
 	{

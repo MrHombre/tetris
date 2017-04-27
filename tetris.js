@@ -137,19 +137,6 @@ function merge(arena, player) {
   });
 }
 
-function playerDrop() {
-  player.pos.y++;
-  if (collide(arena, player)) {
-    player.pos.y--;
-    merge(arena, player);
-    playerReset();
-    arenaSweep();
-    updateScore();
-  }
-
-  // Reseting dropCounter show if we press down another drop wont happened
-  dropCounter = 0;
-}
 
 // Getting Random Pieces
 function playerReset() {
@@ -202,7 +189,7 @@ function update(time = 0) {
   dropCounter += deltaTime;
   /* If our dropCounter is greater than our dropInterval the block should move down, and then reset*/
   if (dropCounter > dropInterval) {
-    playerDrop();
+    player.drop();
   }
 
   draw();
@@ -239,7 +226,7 @@ document.addEventListener('keydown', event => {
   } else if (event.keyCode === 39) {
     player.move(1);
   } else if (event.keyCode === 40) {
-    playerDrop();
+    player.drop();
   } else if (event.keyCode === 81) {
     player.rotate(-1);
   } else if (event.keyCode === 87) {
