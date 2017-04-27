@@ -175,9 +175,6 @@ function rotate(matrix, dir) {
   }
 }
 
-let dropCounter = 0;
-let dropInterval = 1000; //In milliseconds. Every 1 second should drop
-
 let lastTime = 0;
 /* Update Function: Continuously draws the game
 using Animation Frame */
@@ -186,11 +183,7 @@ function update(time = 0) {
   const deltaTime = time - lastTime;
   lastTime = time;
 
-  dropCounter += deltaTime;
-  /* If our dropCounter is greater than our dropInterval the block should move down, and then reset*/
-  if (dropCounter > dropInterval) {
-    player.drop();
-  }
+  player.update(deltaTime);
 
   draw();
   requestAnimationFrame(update);

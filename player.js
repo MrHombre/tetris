@@ -3,6 +3,10 @@ class Player
 {
 	constructor()
 	{
+		//Pretty riskiy having it global so changing that
+		this.dropCounter = 0;
+		this.dropInterval = 1000; //In milliseconds. Every 1 second should drop
+
 		this.pos = { x: 0, y: 0 };
   		this.matrix = null;
   		this.score = 0;
@@ -20,7 +24,7 @@ class Player
 	  }
 
 	  // Reseting dropCounter show if we press down another drop wont happened
-	  dropCounter = 0;
+	  this.dropCounter = 0;
 	}
 
 	//Stopping  player from moving off screen
@@ -52,6 +56,15 @@ class Player
 		     return;
 	    }
 	  }
+	}
+
+	update(deltaTime)
+	{
+		this.dropCounter += deltaTime;
+		/* If our dropCounter is greater than our dropInterval the block should move down, and then reset*/
+		if (this.dropCounter > this.dropInterval) {
+		  this.drop();
+		}
 	}
 
 }
