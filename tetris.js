@@ -151,14 +151,6 @@ function playerDrop() {
   dropCounter = 0;
 }
 
-//Stopping  player from moving off screen
-function playerMove(dir) {
-  player.pos.x += dir;
-  if (collide(arena, player)) {
-    player.pos.x -= dir;
-  }
-}
-
 // Getting Random Pieces
 function playerReset() {
   const pieces = 'ILJOTSZ'
