@@ -5,7 +5,7 @@ class Tetris
 		let lastTime = 0;
 		/* Update Function: Continuously draws the game
 		using Animation Frame */
-		function update(time = 0) {
+		const update = (time = 0) => {
 		  //formating time so it's easier for us
 		  const deltaTime = time - lastTime;
 		  lastTime = time;
@@ -14,7 +14,7 @@ class Tetris
 
 		  this.draw();
 		  requestAnimationFrame(update);
-		}
+		};
 
 		update();
 	}
