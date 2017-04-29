@@ -57,17 +57,6 @@ function updateScore() {
   document.getElementById('score').innerText = player.score;
 }
 
-// Colors for our Pieces
-const colors = [
-  null,
-  '#FF0D72',
-  '#0DC2FF',
-  '#0DFF72',
-  '#F538FF',
-  '#FF8E0D',
-  '#FFE138',
-  '#3877FF',
-]
 
 // Creating our arena
 const arena = new Arena(12, 20);

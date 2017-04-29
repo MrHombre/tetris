@@ -2,6 +2,18 @@ class Tetris
 {
 	constructor()
 	{
+		// Colors for our Pieces
+		this.colors = [
+		  null,
+		  '#FF0D72',
+		  '#0DC2FF',
+		  '#0DFF72',
+		  '#F538FF',
+		  '#FF8E0D',
+		  '#FFE138',
+		  '#3877FF',
+		];
+
 		let lastTime = 0;
 		/* Update Function: Continuously draws the game
 		using Animation Frame */
@@ -41,7 +53,7 @@ class Tetris
 	      // Checking to make sure the value isn't 0
 	      if (value !== 0) {
 	        // adding colorPP
-	        context.fillStyle = colors[value];
+	        context.fillStyle = this.colors[value];
 	        // x=left, y=right, 1=width, 1=height
 	        context.fillRect(x + offset.x, // offset should let us move
 	                         y + offset.y, // blocks later
