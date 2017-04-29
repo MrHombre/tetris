@@ -66,7 +66,8 @@ const playerElements = document.querySelectorAll('.player');
 // Using Keycode instead of key
 document.addEventListener('keydown', event => {
   [
-    [37, 39, 81, 87, 40],
+    [65, 68, 81, 69, 83], //left = a, right = d , rotate q&e. drop s = Player One
+    [72, 75, 89, 73, 74], //left = h, right = k , rotate y&i. drop j = Player Two
   ].forEach((key, index) => {
       const player = tetri[index].player;
       if (event.keyCode === key[0]) {
