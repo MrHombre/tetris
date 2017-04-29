@@ -51,15 +51,17 @@ function updateScore() {
   document.getElementById('score').innerText = tetris.player.score;
 }
 
-const playerElements = document.getElementById('tetris');
+const playerElements = document.querySelectorAll('.player');
+[...playerElements].forEach(element => {
+
+    const canvas = element.querySelector('canvas');
+    const tetris = new Tetris(canvas);
+});
 
 
-const canvas = document.getElementById('tetris');
-//Creating tetris
-const tetris = new Tetris(canvas);
 
 // Using Keycode instead of key
-document.addEventListener('keydown', event => {
+/*document.addEventListener('keydown', event => {
   const player = tetris.player;
   if (event.keyCode === 37) {
     player.move(-1);
@@ -74,4 +76,5 @@ document.addEventListener('keydown', event => {
   }
 });
 
-updateScore();
+updateScore(); 
+*/
