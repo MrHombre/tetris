@@ -60,13 +60,13 @@ function updateScore() {
 // Colors for our Pieces
 const colors = [
   null,
-  '#e11818',
-  '#47909a',
-  '#f4ce58',
-  '#368900',
-  '#694086',
-  '#FFA500',
-  '#e5acb6',
+  '#FF0D72',
+  '#0DC2FF',
+  '#0DFF72',
+  '#F538FF',
+  '#FF8E0D',
+  '#FFE138',
+  '#3877FF',
 ]
 
 // Creating our arena
