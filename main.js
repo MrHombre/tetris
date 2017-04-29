@@ -93,5 +93,4 @@ document.addEventListener('keydown', event => {
   }
 });
 
-player.reset();
 updateScore();
