@@ -13,8 +13,8 @@ function collide(arena, player) {
   for (let y = 0; y < m.length; ++y) {
     for (let x = 0; x < m[y].length; ++x) {
       if (m[y][x] !== 0 &&
-          (arena[y + o.y] &&
-          arena[y + o.y][x + o.x]) !== 0) {
+          (arena.matrix[y + o.y] &&
+          arena.matrix[y + o.y][x + o.x]) !== 0) {
           return true;
       }
     }
@@ -96,19 +96,6 @@ function drawMatrix(matrix, offset) {
         context.fillRect(x + offset.x, // offset should let us move
                          y + offset.y, // blocks later
                          1, 1);
-      }
-    });
-  });
-}
-
-// copying the vale of player into the arena
-function merge(matrix, player) {
-  player.matrix.forEach((row, y) => {
-    row.forEach((value, x) => {
-      //values that are zero are ignored
-      if (value !== 0) {
-        // copy value into arena at the correct offset
-        matrix[y + player.pos.y][x + player.pos.x] = value;
       }
     });
   });

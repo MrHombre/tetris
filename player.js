@@ -17,7 +17,7 @@ class Player
 		this.pos.y++;
 		if (collide(arena, this)) {
 		  this.pos.y--;
-		  merge(arena.matrix, this);
+		  arena.merge(this);
 		  this.reset();
 		  arena.sweep();
 		  updateScore();

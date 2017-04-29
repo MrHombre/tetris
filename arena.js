@@ -14,6 +14,20 @@ class Arena
 		this.matrix.forEach(row => row.fill(0));
 	}
 
+	// copying the vale of player into the arena
+	merge(player) 
+	{
+	  player.matrix.forEach((row, y) => {
+	    row.forEach((value, x) => {
+	      //values that are zero are ignored
+	      if (value !== 0) {
+	        // copy value into arena at the correct offset
+	        this.matrix[y + player.pos.y][x + player.pos.x] = value;
+	      }
+	    });
+	  });
+	}
+
 	// Adding the tetris to tetris
 	sweep() 
 	{
