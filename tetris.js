@@ -4,24 +4,7 @@ const context = canvas.getContext('2d');
 // Just making it bigger to see
 context.scale(20, 20);
 
-// Adding the tetris to tetris
-function arenaSweep() {
-  let rowCount = 1;
-  outer: for (let y = arena.length - 1; y > 0; --y) {
-    for (let x = 0; x < arena.length; ++x) {
-      if (arena[y][x] === 0) {
-          continue outer;
-      }
-    }
 
-    const row = arena.splice(y, 1)[0].fill(0);
-    arena.unshift(row);
-    ++y;
-
-    player.score += rowCount * 10;
-    rowCount *= 2;
-  }
-}
 
 
 // Collision detection
@@ -94,7 +77,7 @@ function draw() {
   context.fillStyle = '#000';
   context.fillRect(0, 0, canvas.width, canvas.height);
 
-  drawMatrix(arena, { x: 0, y: 0 });
+  drawMatrix(arena.matrix, { x: 0, y: 0 });
   //Calling player
   drawMatrix(player.matrix, player.pos);
 }
@@ -107,7 +90,7 @@ function drawMatrix(matrix, offset) {
     row.forEach((value, x) => {
       // Checking to make sure the value isn't 0
       if (value !== 0) {
-        // adding color
+        // adding colorPP
         context.fillStyle = colors[value];
         // x=left, y=right, 1=width, 1=height
         context.fillRect(x + offset.x, // offset should let us move
@@ -119,13 +102,13 @@ function drawMatrix(matrix, offset) {
 }
 
 // copying the vale of player into the arena
-function merge(arena, player) {
+function merge(matrix, player) {
   player.matrix.forEach((row, y) => {
     row.forEach((value, x) => {
       //values that are zero are ignored
       if (value !== 0) {
         // copy value into arena at the correct offset
-        arena[y + player.pos.y][x + player.pos.x] = value;
+        matrix[y + player.pos.y][x + player.pos.x] = value;
       }
     });
   });
@@ -163,7 +146,7 @@ const colors = [
 ]
 
 // Creating our arena
-const arena = createMatrix(12, 20);
+const arena = new Arena(12, 20);
 
 //Player Structure
 const player = new Player;

@@ -1,4 +1,4 @@
-class Areba
+class Arena
 {
 	constructor(w, h)
 	{
@@ -7,6 +7,11 @@ class Areba
 	    	matrix.push(new Array(w).fill(0));
 	  }
 	  this.matrix = matrix;
+	}
+
+	clear()
+	{
+		this.matrix.forEach(row => row.fill(0));
 	}
 
 	// Adding the tetris to tetris

@@ -42,11 +42,11 @@ class Player
 		const pieces = 'ILJOTSZ'
 		this.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
 		this.pos.y = 0;
-		this.pos.x = (arena[0].length / 2 | 0) -
+		this.pos.x = (arena.matrix[0].length / 2 | 0) -
 		               (this.matrix[0].length / 2 | 0);
 		 // Ending the game when collide at the top
 		 if (collide(arena,this)) {
-		    arena.forEach(row => row.fill(0));
+		    arena.clear();
 		    this.score = 0;
 		    updateScore();
 	  }
