@@ -69,13 +69,14 @@ const colors = [
   '#e5acb6',
 ]
 
-const tetris = new Tetris;
-
 // Creating our arena
 const arena = new Arena(12, 20);
 
 //Player Structure
 const player = new Player;
+
+//Creating tetris
+const tetris = new Tetris;
 
 // Using Keycode instead of key
 document.addEventListener('keydown', event => {
