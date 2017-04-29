@@ -1,7 +1,11 @@
 class Tetris
 {
-	constructor()
+	constructor(canvas)
 	{
+		this.canvas = canvas;
+		this.context = canvas.getContext('2d');
+		this.context.scale(20, 20);
+
 		// Colors for our Pieces
 		this.colors = [
 		  null,
@@ -35,8 +39,8 @@ class Tetris
 	draw() 
 	{
 	  // Filling in canvas
-	  context.fillStyle = '#000';
-	  context.fillRect(0, 0, canvas.width, canvas.height);
+	  this.context.fillStyle = '#000';
+	  this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
 	  this.drawMatrix(arena.matrix, { x: 0, y: 0 });
 	  //Calling player
@@ -53,9 +57,9 @@ class Tetris
 	      // Checking to make sure the value isn't 0
 	      if (value !== 0) {
 	        // adding colorPP
-	        context.fillStyle = this.colors[value];
+	        this.context.fillStyle = this.colors[value];
 	        // x=left, y=right, 1=width, 1=height
-	        context.fillRect(x + offset.x, // offset should let us move
+	        this.context.fillRect(x + offset.x, // offset should let us move
 	                         y + offset.y, // blocks later
 	                         1, 1);
 	      }
