@@ -15,7 +15,7 @@ class Player
 	drop() 
 	{
 		this.pos.y++;
-		if (collide(arena, this)) {
+		if (arena.collide(this)) {
 		  this.pos.y--;
 		  arena.merge(this);
 		  this.reset();
@@ -31,7 +31,7 @@ class Player
 	move(dir) 
 	{
 		this.pos.x += dir;
-		if (collide(arena, this)) {
+		if (arena.collide(this)) {
 			this.pos.x -= dir;
 	  }
 	}
@@ -44,8 +44,8 @@ class Player
 		this.pos.y = 0;
 		this.pos.x = (arena.matrix[0].length / 2 | 0) -
 		               (this.matrix[0].length / 2 | 0);
-		 // Ending the game when collide at the top
-		 if (collide(arena,this)) {
+		 // Ending the game when arena.collide at the top
+		 if (arena.collide(this)) {
 		    arena.clear();
 		    this.score = 0;
 		    updateScore();
@@ -61,7 +61,7 @@ class Player
 		 //init offset varible
 		 let offset = 1;
 		 this._rotateMatrix(this.matrix, dir);
-		 while (collide(arena, this)) {
+		 while (arena.collide(this)) {
 		   this.pos.x += offset; //this move use to the right or checks if clear
 		   offset = -(offset + (offset > 0 ? 1 : -1));
 
