@@ -15,6 +15,8 @@ class Tetris
 		  this.draw();
 		  requestAnimationFrame(update);
 		}
+
+		update();
 	}
 
 	//General draw function
