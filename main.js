@@ -58,6 +58,7 @@ const tetris = new Tetris(canvas);
 
 // Using Keycode instead of key
 document.addEventListener('keydown', event => {
+  const player = tetris.player;
   if (event.keyCode === 37) {
     player.move(-1);
   } else if (event.keyCode === 39) {
