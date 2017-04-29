@@ -51,6 +51,8 @@ function updateScore() {
   document.getElementById('score').innerText = tetris.player.score;
 }
 
+const playerElements = document.getElementById('tetris');
+
 
 const canvas = document.getElementById('tetris');
 //Creating tetris
