@@ -48,15 +48,9 @@ function createPiece(type) {
 
 // Score
 function updateScore() {
-  document.getElementById('score').innerText = player.score;
+  document.getElementById('score').innerText = tetris.player.score;
 }
 
-
-// Creating our arena
-const arena = new Arena(12, 20);
-
-//Player Structure
-const player = new Player;
 
 const canvas = document.getElementById('tetris');
 //Creating tetris

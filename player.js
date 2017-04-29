@@ -1,8 +1,11 @@
 //Player structure hopefully working for 2-player
 class Player
 {
-	constructor()
+	constructor(tetris)
 	{
+		this.tetris = tetris;
+		this.arena = tetris.arena;
+
 		//Pretty riskiy having it global so changing that
 		this.dropCounter = 0;
 		this.dropInterval = 1000; //In milliseconds. Every 1 second should drop
@@ -17,11 +20,11 @@ class Player
 	drop() 
 	{
 		this.pos.y++;
-		if (arena.collide(this)) {
+		if (this.arena.collide(this)) {
 		  this.pos.y--;
-		  arena.merge(this);
+		  this.arena.merge(this);
 		  this.reset();
-		  arena.sweep();
+		  this.arena.sweep();
 		  updateScore();
 	  }
 
@@ -33,7 +36,7 @@ class Player
 	move(dir) 
 	{
 		this.pos.x += dir;
-		if (arena.collide(this)) {
+		if (this.arena.collide(this)) {
 			this.pos.x -= dir;
 	  }
 	}
@@ -44,11 +47,11 @@ class Player
 		const pieces = 'ILJOTSZ'
 		this.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
 		this.pos.y = 0;
-		this.pos.x = (arena.matrix[0].length / 2 | 0) -
+		this.pos.x = (this.arena.matrix[0].length / 2 | 0) -
 		               (this.matrix[0].length / 2 | 0);
 		 // Ending the game when arena.collide at the top
-		 if (arena.collide(this)) {
-		    arena.clear();
+		 if (this.arena.collide(this)) {
+		    this.arena.clear();
 		    this.score = 0;
 		    updateScore();
 	  }
@@ -63,7 +66,7 @@ class Player
 		 //init offset varible
 		 let offset = 1;
 		 this._rotateMatrix(this.matrix, dir);
-		 while (arena.collide(this)) {
+		 while (this.arena.collide(this)) {
 		   this.pos.x += offset; //this move use to the right or checks if clear
 		   offset = -(offset + (offset > 0 ? 1 : -1));
 
