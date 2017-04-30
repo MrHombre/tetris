@@ -27,8 +27,8 @@ class Player
 		  this.pos.y--;
 		  this.arena.merge(this);
 		  this.reset();
-		  this.arena.sweep();
-		  updateScore();
+		  this.score += this.arena.sweep();
+		  this.tetris.updateScore(this.score);
 	  }
 
 	  // Reseting dropCounter show if we press down another drop wont happened

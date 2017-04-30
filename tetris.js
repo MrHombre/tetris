@@ -1,9 +1,10 @@
 class Tetris
 {
-	constructor(canvas)
+	constructor(element)
 	{
-		this.canvas = canvas;
-		this.context = canvas.getContext('2d');
+		this.element = element;
+		this.canvas = element.querySelector('canvas');
+		this.context = this.canvas.getContext('2d');
 		this.context.scale(20, 20);
 
 		// Creating our arena
@@ -71,5 +72,11 @@ class Tetris
 	      }
 	    });
 	  });
+	}
+
+	// Score
+	updateScore(score) 
+	{
+	  this.element.querySelector('score').innerText = score;
 	}
 }
