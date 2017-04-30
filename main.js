@@ -48,7 +48,7 @@ function createPiece(type) {
 
 // Score
 function updateScore() {
-  document.getElementById('score').innerText = tetris.player.score;
+  //document.getElementById('score').innerText = tetris.player.score;
 }
 
 const tetri = [];
@@ -81,12 +81,13 @@ const keyListener = (event) => {
 
       if (event.keyCode === key[4]) {
           if (event.type === 'keydown') {
-              player.drop();
-              player.dropInterval = player.DROP_FAST;
-            } else {
+              if (player.dropInterval !== player.DROP_FAST) {
+                    player.drop();
+                    player.dropInterval = player.DROP_FAST;
+              }             
+              } else {
                 player.dropInterval = player.DROP_SLOW;
-            }
-        
+              } 
       }
   }); 
 };
