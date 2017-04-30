@@ -79,5 +79,6 @@ class Tetris
 	// Score
 	updateScore(score)
     {
+        this.element.querySelector('.score').innerText = score;
     }
 }

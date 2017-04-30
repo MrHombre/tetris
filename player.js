@@ -9,7 +9,6 @@ class Player
 		this.tetris = tetris;
 		this.arena = tetris.arena;
 
-		//Pretty riskiy having it global so changing that
 		this.dropCounter = 0;
 		this.dropInterval = this.DROP_SLOW; //In milliseconds. Every 1 second should drop
 
@@ -56,7 +55,7 @@ class Player
 		 if (this.arena.collide(this)) {
 		    this.arena.clear();
 		    this.score = 0;
-		    updateScore();
+		    this.tetris.updateScore(this.score);
 	  }
 	}
 
@@ -109,7 +108,7 @@ class Player
 		this.dropCounter += deltaTime;
 		/* If our dropCounter is greater than our dropInterval the block should move down, and then reset*/
 		if (this.dropCounter > this.dropInterval) {
-		  this.drop();
+		  	this.drop();
 		}
 	}
 
