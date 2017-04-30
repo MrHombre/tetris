@@ -3,12 +3,15 @@ class Player
 {
 	constructor(tetris)
 	{
+		this.DROP_SLOW = 1000;
+		this.DROP_FAST = 50;
+
 		this.tetris = tetris;
 		this.arena = tetris.arena;
 
 		//Pretty riskiy having it global so changing that
 		this.dropCounter = 0;
-		this.dropInterval = 1000; //In milliseconds. Every 1 second should drop
+		this.dropInterval = this.DROP_SLOW; //In milliseconds. Every 1 second should drop
 
 		this.pos = { x: 0, y: 0 };
   		this.matrix = null;
