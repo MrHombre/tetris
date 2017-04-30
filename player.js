@@ -24,6 +24,7 @@ class Player
 	{
 		this.pos.y++;
 		if (this.arena.collide(this)) {
+		  debugger;
 		  this.pos.y--;
 		  this.arena.merge(this);
 		  this.reset();
