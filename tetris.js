@@ -41,7 +41,7 @@ class Tetris
 
 		update();
 
-		this.updateScore(0);
+		//this.updateScore(0);
 	}
 
 	//General draw function
@@ -76,9 +76,9 @@ class Tetris
 	  });
 	}
 
-	// Score
+	/* Score
 	updateScore(score)
     {
         this.element.querySelector('.score').innerText = score;
-    }
+    }*/
 }
