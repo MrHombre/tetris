@@ -68,7 +68,7 @@ const keyListener = (event) => {
         } else if (event.keyCode === key[2]) {
           player.rotate(-1);
         } else if (event.keyCode === key[3]) {
-          player.rotate();
+          player.rotate(1);
         }
       }
 
@@ -84,7 +84,6 @@ const keyListener = (event) => {
       }
   }); 
 };
-
 
 document.addEventListener('keydown', keyListener);
 document.addEventListener('keyup', keyListener);

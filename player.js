@@ -27,7 +27,7 @@ class Player
 		  this.arena.merge(this);
 		  this.reset();
 		  this.score += this.arena.sweep();
-		  //this.tetris.updateScore(this.score);
+		  this.tetris.updateScore(this.score);
 	  }
 
 	  // Reseting dropCounter show if we press down another drop wont happened
@@ -46,7 +46,7 @@ class Player
 	// Getting Random Pieces
 	reset() 
 	{
-		const pieces = 'ILJOTSZ'
+		const pieces = 'ILJOTSZ';
 		this.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
 		this.pos.y = 0;
 		this.pos.x = (this.arena.matrix[0].length / 2 | 0) -
@@ -55,7 +55,6 @@ class Player
 		 if (this.arena.collide(this)) {
 		    this.arena.clear();
 		    this.score = 0;
-		    //this.tetris.updateScore(this.score);
 	  }
 	}
 

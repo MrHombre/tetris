@@ -41,7 +41,7 @@ class Tetris
 
 		update();
 
-		//this.updateScore(0);
+		this.updateScore(0);
 	}
 
 	//General draw function
@@ -68,17 +68,17 @@ class Tetris
 	        // adding colorPP
 	        this.context.fillStyle = this.colors[value];
 	        // x=left, y=right, 1=width, 1=height
-	        this.context.fillRect(x + offset.x, // offset should let us move
-	                         y + offset.y, // blocks later
+	        this.context.fillRect(x + offset.x, 
+	                         y + offset.y,     
 	                         1, 1);
 	      }
 	    });
 	  });
 	}
 
-	/* Score
+	
 	updateScore(score)
     {
         this.element.querySelector('.score').innerText = score;
-    }*/
+    }
 }
