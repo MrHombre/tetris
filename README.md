@@ -1,8 +1,10 @@
 # Tetris
+### Update
+Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://mrhombre.github.io/tetris/)
 ![vivaldi_2017-05-03_15-30-51](https://cloud.githubusercontent.com/assets/12551985/25684375/ea41a12c-3015-11e7-999e-60c255ea936b.png)
 
 ## BUG REPORT
-innerText is not working apparently score wont update. I think everthing is right, but how could it be since I have a bug 😢
+None son 😊
 
 ![tumblr_l7n418dncp1qb00y6o1_500](https://cloud.githubusercontent.com/assets/12551985/24784081/115a86be-1b05-11e7-87b6-1a4446c05ce1.jpg)
 
