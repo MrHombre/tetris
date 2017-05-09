@@ -1,6 +1,6 @@
 # Tetris
 ### Update
-Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://mrhombre.github.io/tetris/)
+Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://oatsandtoast.github.io/tetris/)
 ![vivaldi_2017-05-03_15-30-51](https://cloud.githubusercontent.com/assets/12551985/25684375/ea41a12c-3015-11e7-999e-60c255ea936b.png)
 
 ## BUG REPORT
