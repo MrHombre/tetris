@@ -3,7 +3,7 @@
 Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://oatsandtoast.github.io/tetris/)
 ![vivaldi_2017-05-03_15-30-51](https://cloud.githubusercontent.com/assets/12551985/25684375/ea41a12c-3015-11e7-999e-60c255ea936b.png)
 ### Instructions
-While you both have to play on the same computer(multiplayer coming soon!) You need to know how to playe the game ... or at least the controls
+While you both have to play on the same computer(multiplayer coming soon!) You need to know how to play the game ... or at least the controls
 #### Player-1  						
 - Rotate with Q and E				
 - Left = A							
