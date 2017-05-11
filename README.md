@@ -5,13 +5,13 @@ Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://oatsandtoa
 ### Instructions
 While you both have to play on the same computer(multiplayer coming soon!) You need to know how to playe the game ... or at least the controls
 #### Player-1  						
-- Rotate with Q or E				
+- Rotate with Q and E				
 - Left = A							
 - Down = S							
 - Right = D							
 
 #### Player-2
-- Rotate with Y or I
+- Rotate with Y and I
 - Left = H
 - Down = J
 - Right = K
@@ -38,7 +38,7 @@ so the blocks wont go off screen.~~
 
 ### OK that's done lets work on this 
 
- - ~~read more to add multiplayer(hopefully)~~
+ - read more to add multiplayer(hopefully)
 
  - Combos
 
