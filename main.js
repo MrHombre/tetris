@@ -1,4 +1,6 @@
 const tetrisManager = new TetrisManager(document);
+tetrisManager.createPlayer();
+
 const keyListener = (event) => {
   [
     [65, 68, 81, 69, 83], //left = a, right = d , rotate q&e. drop s = Player One
