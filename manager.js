@@ -22,6 +22,11 @@ class TetrisManager
             .importNode(this.template.content, true) // Thanks you StackOverFlow... Jesus
             .children[0];
 
-        console.log(element);
+        const tetris = new Tetris(element);
+        this.instances.push(tetris);
+
+        this.document.body.appendChild(tetris.element);
+
+        return tetris;
     }
 }
