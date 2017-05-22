@@ -1,12 +1,12 @@
 const tetrisManager = new TetrisManager(document);
-tetrisManager.createPlayer();
+const localTetris = tetrisManager.createPlayer();
 
 const keyListener = (event) => {
   [
     [65, 68, 81, 69, 83], //left = a, right = d , rotate q&e. drop s = Player One
     [72, 75, 89, 73, 74], //left = h, right = k , rotate y&i. drop j = Player Two
   ].forEach((key, index) => {
-      const player = tetrisManager.instances[index].player;
+      const player = localTetris.player;
       if (event.type === 'keydown') {
         if (event.keyCode === key[0]) {
           player.move(-1);
