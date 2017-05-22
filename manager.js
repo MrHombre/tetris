@@ -6,14 +6,8 @@ class TetrisManager
 
         this.template = document.getElementById('player-template');
 
-        this.instances = [];
+        this.instances = new Set; // a bit better then having an array not entirely sure why
 
-        const playerElements = document.querySelectorAll('.player');
-        [...playerElements].forEach(element => {
-            console.log(element);
-            const tetris = new Tetris(element);
-            this.instances.push(tetris);
-        });
     }
 
     createPlayer()
@@ -23,10 +17,17 @@ class TetrisManager
             .children[0];
 
         const tetris = new Tetris(element);
-        this.instances.push(tetris);
+        this.instances.add(tetris);
 
         this.document.body.appendChild(tetris.element);
 
         return tetris;
+    }
+
+    removePlayer(tetris)
+    {
+        this.instances.delete(tetris);
+        this.document.body.removeChild(tetris.element);
+
     }
 }
