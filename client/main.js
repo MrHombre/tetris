@@ -1,6 +1,11 @@
 const tetrisManager = new TetrisManager(document);
 const localTetris = tetrisManager.createPlayer();
 
+//establish a connection with main.js
+const connectionManager = new ConnectionManager();
+
+connectionManager.connect('ws://localhost:9000');
+
 const keyListener = (event) => {
   [
     [65, 68, 81, 69, 83], //left = a, right = d , rotate q&e. drop s = Player One
