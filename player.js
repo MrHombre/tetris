@@ -20,7 +20,8 @@ class Player
 	}
 
 	//Creating More Pieces
-function createPiece(type) {
+createPiece(type) 
+{
   if (type === 'T') {
     return [
           [0, 0, 0],
@@ -94,7 +95,7 @@ function createPiece(type) {
 	reset() 
 	{
 		const pieces = 'ILJOTSZ';
-		this.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
+		this.matrix = this.createPiece(pieces[pieces.length * Math.random() | 0]);
 		this.pos.y = 0;
 		this.pos.x = (this.arena.matrix[0].length / 2 | 0) -
 		               (this.matrix[0].length / 2 | 0);
