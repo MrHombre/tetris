@@ -1,4 +1,6 @@
 # Tetris
+## Coming Soon
+2-player and online
 ### Update
 Working well want to play?? [Click Me!, Come ON Click MEEEE!](https://oatsandtoast.github.io/tetris/)
 ![vivaldi_2017-05-03_15-30-51](https://cloud.githubusercontent.com/assets/12551985/25684375/ea41a12c-3015-11e7-999e-60c255ea936b.png)
@@ -10,11 +12,11 @@ While you both have to play on the same computer(multiplayer coming soon!) You n
 - Down = S							
 - Right = D							
 
-#### Player-2
+<!-- #### Player-2
 - Rotate with Y and I
 - Left = H
 - Down = J
-- Right = K
+- Right = K -->
 
 
 ## BUG REPORT
