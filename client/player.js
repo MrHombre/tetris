@@ -97,8 +97,8 @@ createPiece(type)
 		const pieces = 'ILJOTSZ';
 		this.matrix = this.createPiece(pieces[pieces.length * Math.random() | 0]);
 		this.pos.y = 0;
-		this.pos.x = (this.arena.matrix[0].length / 2 | 0) -
-		               (this.matrix[0].length / 2 | 0);
+		this.pos.x = (this.arena.matrix[0].length / 3 | 0) -
+		               (this.matrix[0].length / 3 | 0);
 		 // Ending the game when arena.collide at the top
 		 if (this.arena.collide(this)) {
 		    this.arena.clear();
